@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar</title>
+</head>
+<body>
+
+    <form action="/edit/ <%= edit.id %> " method="POST">
+        <label for="">Title</title></label><input type="text" name="title" value="<%= edit.title %> ">
+        <br>
+        <label for="">Rating</label><input type="text" name="rating" value="<%= edit.rating %> "> 
+        <br>
+        <label for="">Awards</label><input type="text" name="awards" value=" <%= edit.awards %> ">
+        <br>
+        <label for="">Length</label><input type="text" name="length" value="<%= edit.length %> ">
+        <br>
+        <label for="">Release Date</label><input type="text" name="release_date" value="<%= edit.release_date %> ">
+        <br>
+        <button type="submit">Editar!</button>
+
+    </form>
+
+</body>
+</html>

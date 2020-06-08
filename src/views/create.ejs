@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+</head>
+
+<body>
+
+    <form class="formulario" action="/create/" method="POST">
+        <label for="">Title</title></label><input class='item' type="text" name="title">
+
+        <label for="">Rating</label><input class='item' type="text" name="rating">
+
+        <label for="">Awards</label><input class='item' type="text" name="awards">
+
+        <label for="">Length</label><input class='item' type="text" name="length">
+
+        <label for="">Release Date</label><input class='item' type="text" name="release_date"><br>
+        <label for="">Genero</label>
+        
+        <!-- punto 4 (Relaciones) -->
+        <select name="genre_id" id="">//genre id misma columna de la BD sql en la tabla movies
+            <% generos.forEach(genero =>{  %>
+            <option value="<%= genero.id %>"><%= genero.name %> </option>
+            <% } ) %>
+        </select>
+        <button type="submit">Crear!</button>
+
+    </form>
+
+    <!-- estilo  -->
+    <style>
+        .formulario {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            margin-top:130px;
+            
+        }
+        body{background-color:rgba( 93, 173, 226,0.2);}
+    </style>
+
+</body>
+
+</html>

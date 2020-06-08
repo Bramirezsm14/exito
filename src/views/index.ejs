@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Peliculas</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/estilo.css">
+  </head>
+  <body>
+    
+    <h1>Lista De Peliculas
+     
+    </h1>
+    <ul>
+   <% movies.forEach(movie => { %>
+        <li> <h2><a href="/detail/<%= movie.id %>" > <%= movie.title %> </a></h2></li>
+       <%if(movie.genre){  %> 
+       
+         <h4>genero: <%= movie.genre.name %> </h4> 
+       <% } else {%>
+        <h4>No teno genero lo siento</h4> 
+       <% } %> 
+       
+       
+  <%  }); %>
+ 
+</ul>
+
+
+  </body>
+</html>

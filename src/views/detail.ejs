@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de película</title>
+</head>
+<body>
+
+  <h1>Detalle de la pelicula</h1>
+    <ul>
+    <li> Titulo:<%= detail.title %>  </li>
+    <li> Rating:<%= detail.rating %> </li>
+    <li> Premios :<%= detail.awards %>  </li>
+    <li> Duracion :<%= detail.length %>  </li>
+    <li> Año y hora de extreno:<%= detail.release_date %>  </li>
+    <!-- genero link -->
+    <% if (detail.genre){  %> 
+    <li> Genero: <a  href="/vistaGeneros/<%=detail.genre.id%>"> <%= detail.genre.name %>   </a></l1>
+    <% } else {  %>
+        <span>No tiene genero</span>
+    <% } %>  
+
+    
+
+    <% if (detail.Actors){ %>
+      <li> Actores </li>
+          <% detail.Actors.forEach(actor => { %>
+            <h4> <a  href="/vistaActores/<%=actor.id%>"> <%= actor.first_name %>   </a></h4>
+          <% }) %> 
+    <% } else { %>
+      <span>No tiene genero</span>
+    <% } %>   
+
+
+
+
+
+    </ul>
+    <form action="/edit/<%= detail.id %> " method="GET">
+        <button>Editar</button>
+    </form>
+
+    <form action="/destroy/ <%= detail.id %> " method="post">
+        <button>Borrar</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Generos </title>
+</head>
+<body>
+<!-- punto 2 (Relaciones) -->
+<h1>Genero: <%= genero.name %> </h1>
+<h3>peliculas</h3>
+<ul>
+    <% if (genero.peli){ %>
+        <% genero.peli.forEach(movies=> {%> 
+           
+        <li><%= movies.title %> </li>
+        <% })} %> 
+</ul>
+</body>
+</html> 
+
+
+
