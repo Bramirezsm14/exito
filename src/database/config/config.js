@@ -7,8 +7,9 @@ module.exports = {
     "dialect": "mysql",
     "port": "3306",
     "define": {
-      paranoid: true,
-      underscored: true
+      "underscored": true,
+      "paranoid": true,
+      
     }
   },
   "test": {

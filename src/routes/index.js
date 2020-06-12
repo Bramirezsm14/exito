@@ -28,5 +28,12 @@ router.get('/vistaGeneros/:id',controller.generos)
 /* Actores */
 router.get('/vistaActores/:id',controller.actores)
 /*Nueva Actuacion*/
+
+/**Crear la union de un actor con una pelicula */
+router.get('/creacion',controller.creation);
+/**Datos de la nueva actuacion */
+router.post('/creacion',controller.creationData);
+
+
 // ---------**** TO BE CONTINUED****---------
 module.exports = router;

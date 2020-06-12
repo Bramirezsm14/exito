@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creacion</title>
+</head>
+<body>
+    <h1>Union de Actores con Peliculas</h1>
+    <form action="/creacion" method="post">
+        <label for="">Peliculas:</label>
+        <select name="movie" id="">
+            <% movie.forEach(movies =>{ %>
+                <option value="<%= movies.id %>"><%= movies.title %></option>
+            <% }) %>  
+        </select>
+        <label for="">Actores:</label>
+        <select name="actor" id="">
+            <% actor.forEach(actores =>{ %>
+                <option value="<%= actores.id %> "><%= actores.first_name %> </option>
+            <% }) %>  
+        </select>
+        <button type="submit">Crear</button>
+    </form>
+</body>
+</html>

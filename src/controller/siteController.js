@@ -91,6 +91,21 @@ actores:async (req, res) => {
     }catch (error) {
         res.send(error)
     }
+},
+creation:async (req,res)=>{
+    let actor = await DB.Actor.findAll()
+    let movie = await DB.Movie.findAll()
+    Promise.all([actor,movie])
+    res.render('creacion',{actor,movie})
+},
+creationData:async (req,res)=>{
+    await DB.actorMovie.create({
+        movie_id:req.body.movie,
+        actor_id:req.body.actor
+    })
+    res.redirect('/')
 }
+
+
 }
 module.exports = siteController

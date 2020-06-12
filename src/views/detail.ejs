@@ -23,14 +23,12 @@
 
     
 
-    <% if (detail.Actors){ %>
+    <% //if (detail.Actors){ %>
       <li> Actores </li>
           <% detail.Actors.forEach(actor => { %>
-            <h4> <a  href="/vistaActores/<%=actor.id%>"> <%= actor.first_name %>   </a></h4>
+            <li><h4> <a  href="/vistaActores/<%=actor.id%>"> <%= actor.first_name %>   </a></h4></li>
           <% }) %> 
-    <% } else { %>
-      <span>No tiene genero</span>
-    <% } %>   
+    
 
 
 

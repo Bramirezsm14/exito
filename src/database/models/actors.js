@@ -18,6 +18,11 @@ module.exports = (sequelize,Datatypes)=>{
             otherKey:"movie_id",
             timestamps:false
         })
+        actor.hasMany(models.actorMovie,{
+            as:"actorMovie",
+            foreignKey:"actor_id",
+            otherKey:"movie_id"
+        })
     }
     return actor
-} 
+}
