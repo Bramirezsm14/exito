@@ -6,8 +6,10 @@ module.exports = (sequelize,Datatypes)=>{
             rating:Datatypes.DECIMAL,
             awards:Datatypes.INTEGER,
             length:Datatypes.INTEGER,
-            release_date:Datatypes.DATE,
-            genre_id:Datatypes.INTEGER
+            release_date:{type:Datatypes.DATE,
+            defaultValue:Date.now()},
+            genre_id:Datatypes.INTEGER,
+            deleted_at:Datatypes.DATE
     },{
         timestamps:false
     

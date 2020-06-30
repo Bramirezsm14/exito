@@ -9,7 +9,6 @@ module.exports = {
     "define": {
       "underscored": true,
       "paranoid": true,
-      
     }
   },
   "test": {

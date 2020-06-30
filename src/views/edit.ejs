@@ -8,16 +8,40 @@
 <body>
 
     <form action="/edit/ <%= edit.id %> " method="POST">
-        <label for="">Title</title></label><input type="text" name="title" value="<%= edit.title %> ">
+        <label for="">Title</title></label>
+        <input type="text" name="title" value="<%= edit.title %> ">
         <br>
-        <label for="">Rating</label><input type="text" name="rating" value="<%= edit.rating %> "> 
+        <label for="">Rating</label>
+        <input type="text" name="rating" value="<%= edit.rating %> "> 
         <br>
-        <label for="">Awards</label><input type="text" name="awards" value=" <%= edit.awards %> ">
+        <label for="">Awards</label>
+        <input type="text" name="awards" value=" <%= edit.awards %> ">
         <br>
-        <label for="">Length</label><input type="text" name="length" value="<%= edit.length %> ">
+        <label for="">Length</label>
+        <input type="text" name="length" value="<%= edit.length %> ">
         <br>
-        <label for="">Release Date</label><input type="text" name="release_date" value="<%= edit.release_date %> ">
+        <label for="">Release Date</label>
+        <input type="text" name="release_date" value="<%= edit.release_date %> ">
         <br>
+        <label for="">Genero</label>
+        <select name="genre_id" id="">
+        <% generos.forEach(genero=> { %>//lista de generos 
+            <% if (edit.genreId===genero.id){  %> 
+                <option value="<%= genero.id %>"  selected><%= genero.name %> </option>
+        <% }else{%> 
+            <option value="<%= genero.id %>"><%= genero.name %> </option>
+        <% }})  %> 
+    </select>
+
+    <!-- <select name="actors" id="" multiple>
+        <% //actors.forEach(actor => { %>           
+            <% //if (edit.Actors.some(actorPelicula => actorPelicula.id === actor.id)) { %>
+            <option value="<%= //actor.id %>" selected> <%=// actor.first_name +' '+ actor.last_name %> </option>
+            <% //} else { %>
+            <option value="<%= //actor.id %> "><%= //actor.first_name +' '+ actor.last_name %> </option>
+            <%// } %>
+        <% //}) %>
+</select> -->
         <button type="submit">Editar!</button>
 
     </form>

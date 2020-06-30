@@ -18,7 +18,8 @@ const siteController = {
     create: async (req, res) => {
         try {
             const generos = await DB.genre.findAll()
-            res.render('create', { generos })
+            const actors = await DB.Actor.findAll()
+            res.render('create', { generos,actors })
         } catch (error) {
             res.send(error)
         }
@@ -34,16 +35,25 @@ const siteController = {
     },
     store: async (req, res) => {
         try {
-            await DB.Movie.create(req.body)
+           // res.send(req.body)
+            const newMovie= await DB.Movie.create(req.body)
+                await newMovie.addActors(req.body.actors,{through:{sueldo:333}}) // el through es un campo de la tabla intermedia
             res.redirect('/')
         } catch (error) {
             res.send(error)
         }
     },
+    updateForm:(req,res)=>{
+
+    },
+
     edit: async (req, res) => {
         try {
-            const edit = await DB.Movie.findByPk(req.params.id)
-            res.render('edit', { edit })
+            const edit = await DB.Movie.findByPk(req.params.id,/*{include:{all:true}}*/)
+            const generos = await DB.genre.findAll()
+            const actors = await DB.Actor.findAll()
+            //res.send(edit.Actors[0])
+            res.render('edit', { edit,generos,actors })
         } catch (error) {
             res.send(error)
         }

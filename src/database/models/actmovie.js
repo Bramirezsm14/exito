@@ -3,7 +3,8 @@ module.exports = (sequelize,Datatypes)=>{
         "actorMovie",
         {
             actor_id:Datatypes.INTEGER,
-            movie_id:Datatypes.INTEGER
+            movie_id:Datatypes.INTEGER,
+            //sueldo:Datatypes.INTEGER,
         },
         {
             tableName:"actor_movie",
