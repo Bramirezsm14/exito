@@ -49,7 +49,7 @@ const siteController = {
 
     edit: async (req, res) => {
         try {
-            const edit = await DB.Movie.findByPk(req.params.id,/*{include:{all:true}}*/)
+            const edit = await DB.Movie.findByPk(req.params.id,{include:{all:true}})// es esencial 
             const generos = await DB.genre.findAll()
             const actors = await DB.Actor.findAll()
             //res.send(edit.Actors[0])
